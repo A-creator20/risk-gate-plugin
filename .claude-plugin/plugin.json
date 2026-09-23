@@ -1,0 +1,8 @@
+{
+  "name": "risk-gate",
+  "version": "0.1.0",
+  "description": "Pre-PR workflow: scores a diff's risk (HIGH/MEDIUM/LOW), runs deterministic guardrails, suggests a reviewer (CODEOWNERS + git history), and — only on HIGH risk — enriches the suggestion with Jira/Confluence ownership context.",
+  "author": {
+    "name": "Aparna Kumari"
+  }
+}

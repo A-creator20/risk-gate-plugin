@@ -1,0 +1,13 @@
+{
+  "name": "risk-gate-marketplace",
+  "owner": {
+    "name": "Aparna Kumari"
+  },
+  "plugins": [
+    {
+      "name": "risk-gate",
+      "source": "./",
+      "description": "Pre-PR workflow: risk score, guardrails, reviewer suggestion, with HIGH-risk Jira/Confluence enrichment."
+    }
+  ]
+}

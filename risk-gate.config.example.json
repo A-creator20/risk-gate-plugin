@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy this to risk-gate.config.json at your repo root to override the Maxsight defaults baked into scripts/change-risk-score.js. Omit either key to keep that default.",
+  "sensitiveCategories": [
+    {
+      "label": "build/lint/CI config",
+      "patterns": ["module-federation\\.config\\.ts$", "(^|/)webpack-config/", "eslint\\.config\\.mjs$", "package\\.json$", "(^|/)\\.circleci/"]
+    },
+    {
+      "label": "API contract",
+      "patterns": ["(^|/)specs/.*\\.json$", "orval(\\.unstable)?\\.config\\.ts$", "(^|/)libs/data/"]
+    }
+  ],
+  "generatedFilePattern": "(^|/)libs/shared-types/src/v5.*/generated\\.ts$"
+}
