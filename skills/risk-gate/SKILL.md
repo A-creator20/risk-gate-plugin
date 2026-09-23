@@ -38,6 +38,19 @@ alone can tell you.
    Keep the guardrail failure detail (which files, why) below the table if either failed — a table
    cell should stay short.
 
+2a. **Also report this plugin's hooks status**, as its own small table, right after the report
+   above — the script only covers the scripted checks; the hooks run separately (on every
+   Write/Edit/Read/Bash call) and are otherwise invisible to whoever is reading the report:
+
+   | Hook | Purpose | Status |
+   | --- | --- | --- |
+   | guard-writes | Blocks writes that add keys to non-English translation files, or hand-edit secrets/generated files | ✅ Active |
+   | guard-reads | Blocks reading files that may hold secrets (`.env*`, `.npmrc`, private keys, etc.) | ✅ Active |
+   | guard-cypress-tz | Blocks Cypress commands missing `TZ=UTC` | ✅ Active |
+
+   These are always "Active" once this plugin is installed and enabled — they don't depend on the
+   risk score or the diff being checked, unlike the rest of this report.
+
 3. **If either guardrail failed, stop here** and surface that first — a HIGH risk score doesn't
    matter if the PR can't pass its guardrails yet.
 
